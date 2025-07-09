@@ -78,25 +78,9 @@ Example:
 | Overlay divergence    | Adds a divergence heatmap                  |
 | Overlay curl          | Adds a curl heatmap                        |
 
-## How It Works
-
-- **Initial Field:** Uniform field defined by user input.
-- **Drawing:** Each arrow adds a localized vector influence, decaying with distance.
-- **Computation:** Resultant field is recalculated by summing the initial field and all user-drawn influences.
-- **Analysis:** Gradient, divergence, and curl are computed using finite differences and visualized as overlays.
-
 ## Requirements
 
 - Python 3.7+
 - numpy
 - matplotlib
 - scipy
-
-## License
-
-This project is open-source and available under the MIT License.
-
-## Acknowledgements
-
-- Built with `matplotlib` for interactive plotting.
-- Uses `scipy.interpolate.griddata` for smooth overlays.
