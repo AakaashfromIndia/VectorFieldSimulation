@@ -1,4 +1,7 @@
 ## Interactive Vector Field Simulation
+
+![image](https://github.com/user-attachments/assets/f42e63cb-84e8-4b8e-9094-fa618a4455d7)
+
 This project is an interactive computational tool designed to help users visualize, manipulate, and analyze two-dimensional vector fields. At its core, it combines mathematical concepts from vector calculus with intuitive graphical interaction, making abstract field properties accessible and visually engaging.
 
 A vector field in two dimensions assigns a vector (with both magnitude and direction) to every point in a plane. Mathematically, such a field is often written as:
@@ -29,6 +32,71 @@ These properties are computed numerically using finite differences and visualize
 Example:
 ![image](https://github.com/user-attachments/assets/8b98bd29-13e3-411b-9b56-704f9a7d9906)
 
+## Installation
 
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/yourusername/vector-field-visualizer.git
+   cd vector-field-visualizer
+   ```
 
-This could serve as an educational bridge between theory and intuition. It enables users to experiment with field configurations, observe the effects of local changes, and develop a deeper understanding of core vector calculus concepts such as divergence and curl—all within an accessible graphical environment.
+2. **Install dependencies:**
+   ```bash
+   pip install numpy matplotlib scipy
+   ```
+
+## Usage
+
+1. **Run the script:**
+   ```bash
+   python vector_field_visualizer.py
+   ```
+
+2. **Set Initial Field:**
+   - Enter the **x** and **y** components (a, b) for the initial field when prompted.
+
+3. **Draw Arrows:**
+   - Left panel: Click and drag to draw arrows (red) representing additional vector influences.
+
+4. **Calculate Resultant:**
+   - Click the **"Calculate Resultant"** button to update the field with your drawn arrows.
+
+5. **Analyze the Field:**
+   - Use the right panel buttons to:
+     - **Display only field:** Show the resultant field.
+     - **Overlay gradient:** Visualize the field's gradient magnitude.
+     - **Overlay divergence:** Visualize the field's divergence.
+     - **Overlay curl:** Visualize the field's curl.
+
+## Controls & Buttons
+
+| Button                | Function                                   |
+|-----------------------|--------------------------------------------|
+| Calculate Resultant   | Updates the field with user-drawn arrows   |
+| Display only field    | Shows only the resultant vector field      |
+| Overlay gradient      | Adds a gradient magnitude heatmap          |
+| Overlay divergence    | Adds a divergence heatmap                  |
+| Overlay curl          | Adds a curl heatmap                        |
+
+## How It Works
+
+- **Initial Field:** Uniform field defined by user input.
+- **Drawing:** Each arrow adds a localized vector influence, decaying with distance.
+- **Computation:** Resultant field is recalculated by summing the initial field and all user-drawn influences.
+- **Analysis:** Gradient, divergence, and curl are computed using finite differences and visualized as overlays.
+
+## Requirements
+
+- Python 3.7+
+- numpy
+- matplotlib
+- scipy
+
+## License
+
+This project is open-source and available under the MIT License.
+
+## Acknowledgements
+
+- Built with `matplotlib` for interactive plotting.
+- Uses `scipy.interpolate.griddata` for smooth overlays.
